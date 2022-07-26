@@ -49,7 +49,7 @@ resource "google_bigquery_table" "fact_movie" {
   },
   {
     "name": "amount_spent",
-    "type": "NUMERIC(18,5)",
+    "type": "NUMERIC",
     "mode": "NULLABLE",
     "description": "Devices dimension"
   },
