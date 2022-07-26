@@ -1,3 +1,13 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "3.77.0"
+    }
+  }
+  required_version = ">= 0.13.0"
+}
+
 module "vpc" {
   source = "./modules/vpc"
 
@@ -28,4 +38,19 @@ module "cloudsql" {
   database_name = var.database_name
   db_username = var.db_username
   db_password = var.db_password
+}
+
+module "storage" {
+  source = "./modules/storage"
+
+  project_id = var.project_id
+  region = "US"
+}
+
+module "dwh" {
+  source = "./modules/dwh"
+
+  dataset_id = var.dataset_id
+  location = var.region
+  table_id = var.table_id
 }
