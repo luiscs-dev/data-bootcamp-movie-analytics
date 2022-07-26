@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.utils.dates import days_ago
 
-DAG_NAME = ""
+DAG_NAME = "gcp_list_bucket"
 dag_args = {
         "owner":"airflow",
         "start_date": days_ago(1), 
