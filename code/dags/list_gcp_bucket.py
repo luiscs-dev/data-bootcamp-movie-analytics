@@ -9,7 +9,7 @@ dag_args = {
         "schedule_interval": "@daily"
     }
 
-with DAG(dag_id = DAG_NAME, default_args = args) as dag:
+with DAG(dag_id = DAG_NAME, default_args = dag_args) as dag:
 
     init = DummyOperator(
             task_id="start"
