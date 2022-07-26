@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.utils.dates import days_ago
+from airflow.providers.google.cloud.operators.gcp import GCSCreateBucketOperator
 
 DAG_NAME = "gcp_list_bucket"
 dag_args = {
