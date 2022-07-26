@@ -16,7 +16,7 @@ with DAG(dag_id = DAG_NAME, default_args = dag_args) as dag:
             task_id="start"
     )
     
-    list_bucket = GoogleCloudStorageListOperator(
+    list_bucket = GCSListObjectsOperator(
         task_id="list_gcp_filess",
         bucket="{{ var.value.get('raw_bucket', 'default_bucket') }}",
         gcp_conn_id="my_gcp"
