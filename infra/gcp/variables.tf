@@ -56,3 +56,13 @@ variable "db_password" {
   description = "Password credentials for root user"
   default     = "dbpassword"
 }
+
+# Bigquery
+variable "dataset_id" {
+  description = "dataset_id"
+  default = "datacamp_analitycs"
+}
+
+variable "table_id" {
+  description = "table id"
+}
